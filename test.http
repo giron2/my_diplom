@@ -1,0 +1,58 @@
+# примеры API-запросов
+
+
+# получение все постов
+GET http://127.0.0.1:8000//posts/
+Content-Type: application/json
+
+###
+# получение одного поста
+GET http://127.0.0.1:8000//post/68/
+Content-Type: application/json
+
+###
+# создание поста
+POST http://127.0.0.1:8000//api/post/
+Content-Type: application/json
+Authorization: Token 2e558b4563b1f08a1f8cb5825f5c1c4f79122099
+
+
+{
+    "text": "111"
+  }
+
+###
+
+# редактировать запись
+PATCH http://127.0.0.1:8000//api/post/68/
+Content-Type: application/json
+Authorization: Token cd4f3bb7bb886263cc89a0093b1c0fea8bb27338
+
+
+{
+   "text": "35r5"
+}
+
+###
+# создание комментария
+POST http://127.0.0.1:8000//api/comments/
+Content-Type: application/json
+Authorization: Token 2e558b4563b1f08a1f8cb5825f5c1c4f79122099
+
+{
+    "text": "111",
+    "post_id": "68"
+
+  }
+###
+# создание лайка
+POST http://127.0.0.1:8000//api/like/
+Content-Type: application/json
+Authorization: Token cd4f3bb7bb886263cc89a0093b1c0fea8bb27338
+
+{
+
+    "post": "68"
+
+  }
+###
